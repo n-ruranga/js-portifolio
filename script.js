@@ -1,4 +1,4 @@
- // Navbar scroll effect
+// Navbar scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
@@ -13,12 +13,14 @@ const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
     navMenu.classList.toggle('active');
 });
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     });
 });
@@ -63,6 +65,56 @@ backToTopButton.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+// Intersection Observer for About/Skills animations
+function animateOnScrollObserver() {
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                el.classList.add('visible');
+                // Staggered delay
+                const delay = el.getAttribute('data-delay') || 0;
+                el.style.transitionDelay = delay + 'ms';
+                // Animate skill bars if present
+                if (el.classList.contains('skill-category')) {
+                    el.querySelectorAll('.skill-list li').forEach((li, idx) => {
+                        setTimeout(() => li.classList.add('visible'), 100 * idx);
+                    });
+                }
+                obs.unobserve(el);
+            }
+        });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+}
+
+// Animate skill bars when their li becomes visible
+function animateSkillBars() {
+    document.querySelectorAll('.skill-list li').forEach(li => {
+        if (li.classList.contains('visible')) {
+            const bar = li.querySelector('.skill-bar');
+            if (bar && !bar.querySelector('.skill-bar-fill')) {
+                const percent = bar.getAttribute('data-skill') || 0;
+                const fill = document.createElement('div');
+                fill.className = 'skill-bar-fill';
+                fill.style.setProperty('--skill-width', percent + '%');
+                bar.appendChild(fill);
+                setTimeout(() => {
+                    fill.style.width = percent + '%';
+                }, 100);
+            }
+        }
+    });
+}
+
+// Run observers and skill bar animation on scroll and load
+window.addEventListener('DOMContentLoaded', () => {
+    animateOnScrollObserver();
+    animateSkillBars();
+});
+window.addEventListener('scroll', animateSkillBars);
+window.addEventListener('resize', animateSkillBars);
 
 // Email Functionality using EmailJS
 (function() {
@@ -126,14 +178,17 @@ const closeBtn = document.querySelector('.close');
 function showModal(message) {
     modalText.textContent = message;
     modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
 }
 
 closeBtn.onclick = function() {
     modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
 }
 
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     }
 }

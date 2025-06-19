@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nshuti Jabes Ruranga - Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
+    <!-- Geometric Background Elements -->
+    <div class="bg-shapes">
+        <div class="shape-1"></div>
+        <div class="shape-2"></div>
+        <div class="shape-3"></div>
+        <div class="shape-4"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">Nshuti Jabes</div>
+            <div class="logo animate__animated animate__fadeIn">Nshuti Jabes</div>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="nav-link animate__animated animate__fadeIn">Home</a></li>
+                <li><a href="#about" class="nav-link animate__animated animate__fadeIn">About</a></li>
+                <li><a href="#skills" class="nav-link animate__animated animate__fadeIn">Skills</a></li>
+                <li><a href="#experience" class="nav-link animate__animated animate__fadeIn">Experience</a></li>
+                <li><a href="#projects" class="nav-link animate__animated animate__fadeIn">Projects</a></li>
+                <li><a href="#contact" class="nav-link animate__animated animate__fadeIn">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -32,16 +41,16 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Nshuti Jabes Ruranga</h1>
-                <p class="hero-subtitle">Full Stack Developer & Tech Entrepreneur</p>
-                <p class="hero-description">
+                <h1 class="animate__animated animate__fadeInUp">Nshuti Jabes Ruranga</h1>
+                <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Full Stack Developer & Tech Entrepreneur</p>
+                <p class="hero-description animate__animated animate__fadeInUp animate__delay-2s">
                     Innovative full-stack developer passionate about transformative education and AI-driven solutions. 
                     I leverage cutting-edge technologies to create impactful solutions that make a meaningful difference in the world.
                 </p>
-                <a href="#contact" class="cta-button">Get In Touch</a>
+                <a href="#contact" class="cta-button animate__animated animate__fadeInUp animate__delay-3s">Get In Touch</a>
             </div>
             <div class="hero-image">
-                <img src="./images/me.png" alt="Nshuti Jabes Ruranga" class="profile-img">
+                <img src="./images/me.png" alt="Nshuti Jabes Ruranga" class="profile-img animate__animated animate__fadeIn animate__delay-1s">
             </div>
         </div>
     </section>
@@ -50,19 +59,34 @@
     <section class="section" id="about">
         <div class="content-wrapper">
             <h2 class="section-title">About Me</h2>
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p style="font-size: 1.1rem; line-height: 1.8; color: #666; margin-bottom: 2rem;">
-                    I'm a passionate full-stack developer and aspiring tech entrepreneur from Kigali, Rwanda. 
-                    My journey in technology is driven by curiosity and a commitment to positive change. 
-                    I specialize in creating innovative solutions using modern web technologies, with a particular 
-                    focus on AI and its applications in agriculture.
-                </p>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: #666;">
-                    My collaborative approach and diverse skill set help me push boundaries in AI and robotics, 
-                    fostering inclusive environments that nurture growth and innovation. Inspired by the philosophy 
-                    of working for success rather than wishing for it, I continuously strive to make a meaningful 
-                    impact through technology.
-                </p>
+            <div class="about-grid">
+                <div class="about-card animate-on-scroll" data-animate="fade-in-up">
+                    <div class="about-icon">
+                        <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <h3>Who I Am</h3>
+                    <p>
+                        A passionate full-stack developer and aspiring tech entrepreneur from Kigali, Rwanda. My journey in technology is driven by curiosity and a commitment to positive change.
+                    </p>
+                </div>
+                <div class="about-card animate-on-scroll" data-animate="fade-in-up" data-delay="100">
+                    <div class="about-icon">
+                        <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>My Focus</h3>
+                    <p>
+                        Specializing in creating innovative solutions using modern web technologies, with a particular focus on AI and its applications in agriculture.
+                    </p>
+                </div>
+                <div class="about-card animate-on-scroll" data-animate="fade-in-up" data-delay="200">
+                    <div class="about-icon">
+                        <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12l5 5L22 4"/></svg>
+                    </div>
+                    <h3>My Approach</h3>
+                    <p>
+                        My collaborative approach and diverse skill set help me push boundaries in AI and robotics, fostering inclusive environments that nurture growth and innovation.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -72,48 +96,60 @@
         <div class="content-wrapper">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend Development</h3>
+                <div class="skill-category animate-on-scroll" data-animate="fade-in-up">
+                    <div class="skill-header">
+                        <div class="skill-icon">💻</div>
+                        <h3>Frontend Development</h3>
+                    </div>
                     <ul class="skill-list">
-                        <li>React.js & Next.js</li>
-                        <li>TypeScript & JavaScript</li>
-                        <li>HTML5 & CSS3</li>
-                        <li>Tailwind CSS</li>
-                        <li>SCSS & Bootstrap</li>
-                        <li>Three.js</li>
+                        <li><span>React.js & Next.js</span><div class="skill-bar" data-skill="90"></div></li>
+                        <li><span>TypeScript & JavaScript</span><div class="skill-bar" data-skill="85"></div></li>
+                        <li><span>HTML5 & CSS3</span><div class="skill-bar" data-skill="95"></div></li>
+                        <li><span>Tailwind CSS</span><div class="skill-bar" data-skill="80"></div></li>
+                        <li><span>SCSS & Bootstrap</span><div class="skill-bar" data-skill="75"></div></li>
+                        <li><span>Three.js</span><div class="skill-bar" data-skill="70"></div></li>
                     </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Backend Development</h3>
+                <div class="skill-category animate-on-scroll" data-animate="fade-in-up" data-delay="100">
+                    <div class="skill-header">
+                        <div class="skill-icon">🔧</div>
+                        <h3>Backend Development</h3>
+                    </div>
                     <ul class="skill-list">
-                        <li>Node.js</li>
-                        <li>PHP & Laravel</li>
-                        <li>Python</li>
-                        <li>WebRTC</li>
-                        <li>C++ & Java</li>
-                        <li>RESTful APIs</li>
+                        <li><span>Node.js</span><div class="skill-bar" data-skill="85"></div></li>
+                        <li><span>PHP & Laravel</span><div class="skill-bar" data-skill="70"></div></li>
+                        <li><span>Python</span><div class="skill-bar" data-skill="80"></div></li>
+                        <li><span>WebRTC</span><div class="skill-bar" data-skill="60"></div></li>
+                        <li><span>C++ & Java</span><div class="skill-bar" data-skill="65"></div></li>
+                        <li><span>RESTful APIs</span><div class="skill-bar" data-skill="90"></div></li>
                     </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Database & Tools</h3>
+                <div class="skill-category animate-on-scroll" data-animate="fade-in-up" data-delay="200">
+                    <div class="skill-header">
+                        <div class="skill-icon">🗄️</div>
+                        <h3>Database & Tools</h3>
+                    </div>
                     <ul class="skill-list">
-                        <li>MongoDB</li>
-                        <li>MySQL & PostgreSQL</li>
-                        <li>Prisma ORM</li>
-                        <li>Firebase</li>
-                        <li>Git & GitHub</li>
-                        <li>Swagger</li>
+                        <li><span>MongoDB</span><div class="skill-bar" data-skill="80"></div></li>
+                        <li><span>MySQL & PostgreSQL</span><div class="skill-bar" data-skill="75"></div></li>
+                        <li><span>Prisma ORM</span><div class="skill-bar" data-skill="70"></div></li>
+                        <li><span>Firebase</span><div class="skill-bar" data-skill="65"></div></li>
+                        <li><span>Git & GitHub</span><div class="skill-bar" data-skill="90"></div></li>
+                        <li><span>Swagger</span><div class="skill-bar" data-skill="60"></div></li>
                     </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Specialized Skills</h3>
+                <div class="skill-category animate-on-scroll" data-animate="fade-in-up" data-delay="300">
+                    <div class="skill-header">
+                        <div class="skill-icon">✨</div>
+                        <h3>Specialized Skills</h3>
+                    </div>
                     <ul class="skill-list">
-                        <li>Real-time Applications</li>
-                        <li>Socket Programming</li>
-                        <li>UI/UX Design</li>
-                        <li>Responsive Design</li>
-                        <li>QR Code Integration</li>
-                        <li>Maps Integration</li>
+                        <li><span>Real-time Applications</span><div class="skill-bar" data-skill="80"></div></li>
+                        <li><span>Socket Programming</span><div class="skill-bar" data-skill="75"></div></li>
+                        <li><span>UI/UX Design</span><div class="skill-bar" data-skill="85"></div></li>
+                        <li><span>Responsive Design</span><div class="skill-bar" data-skill="90"></div></li>
+                        <li><span>QR Code Integration</span><div class="skill-bar" data-skill="70"></div></li>
+                        <li><span>Maps Integration</span><div class="skill-bar" data-skill="65"></div></li>
                     </ul>
                 </div>
             </div>
@@ -174,37 +210,59 @@
         <div class="content-wrapper">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card animate__animated">
+                    <div class="project-badge">Featured</div>
                     <h3 class="project-title">Raah Estates</h3>
                     <p class="project-description">
                         A comprehensive full-stack real estate application built with React.js, Node.js, and MongoDB. 
                         Features include interactive maps using React-Leaflet, real-time chat functionality with Socket.io, 
                         and property management system with Prisma ORM.
                     </p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
                     <a href="https://raah-estate-frontent.vercel.app/" class="project-link" target="_blank">View Project</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card animate__animated">
                     <h3 class="project-title">Ubuntu Knights</h3>
                     <p class="project-description">
                         A visually engaging website showcasing opportunities in the arts sector. Built with ReactJS and Three.js, 
                         featuring 3D models and interactive elements that demonstrate the potential of digital innovation in art.
                     </p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>Three.js</span>
+                        <span>WebGL</span>
+                    </div>
                     <a href="https://ubuntu-knights.vercel.app/" class="project-link" target="_blank">View Project</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card animate__animated">
                     <h3 class="project-title">TGlobals LED Solutions</h3>
                     <p class="project-description">
                         Interactive website highlighting TGlobals' LED advertising solutions and project portfolio. 
                         Features responsive design, modern UI/UX, and showcases the company's impact in digital advertising.
                     </p>
+                    <div class="project-tech">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                    </div>
                     <a href="https://tglobals.vercel.app/" class="project-link" target="_blank">View Project</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card animate__animated">
+                    <div class="project-badge">In Development</div>
                     <h3 class="project-title">Frisky Social Media</h3>
                     <p class="project-description">
                         Backend development for a social media application combining features of Instagram and Likee. 
                         Implemented using Node.js, MongoDB, and Swagger for API documentation. Focused on scalable architecture and real-time features.
                     </p>
+                    <div class="project-tech">
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                        <span>WebSockets</span>
+                    </div>
                     <a href="#" class="project-link" onclick="showModal('This project is currently in development and not publicly available.')">Learn More</a>
                 </div>
             </div>
@@ -219,20 +277,29 @@
                 <div class="contact-info">
                     <h3>Contact Information</h3>
                     <div class="contact-item">
-                        <strong>Phone:</strong>
-                        <span>+250-784593206</span>
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <strong>Phone</strong>
+                            <span>+250-784593206</span>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <strong>Email:</strong>
-                        <span>nshutij7@gmail.com</span>
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <strong>Email</strong>
+                            <span>nshutij7@gmail.com</span>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <strong>Location:</strong>
-                        <span>Kigali, Rwanda</span>
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Location</strong>
+                            <span>Kigali, Rwanda</span>
+                        </div>
                     </div>
-                    <div style="margin-top: 2rem;">
+                    <div class="contact-objective">
                         <h4>Career Objectives</h4>
-                        <p style="margin-top: 1rem; line-height: 1.6;">
+                        <p>
                             My long-term goals center around becoming a leader in AI-driven agricultural solutions, 
                             with a focus on transforming agriculture in Rwanda and Africa to enhance food security and reduce world hunger.
                         </p>
@@ -281,7 +348,12 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>Made with ❤️ by <a href="https://github.com/nshutij7" target="_blank">Nshuti Jabes</a></p>
+            <p>© 2024 Nshuti Jabes Ruranga. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/nshutij7" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+            </div>
         </div>
     </footer>
 
